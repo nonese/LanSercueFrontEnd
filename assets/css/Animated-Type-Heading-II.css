@@ -1,0 +1,50 @@
+.cd-words-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+}
+
+.cd-words-wrapper span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.cd-headline.clip > span {
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+.cd-headline.clip span {
+  font-size: 30px;
+}
+
+@media (min-width: 576px) {
+  .cd-headline.clip span {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .cd-headline.clip span {
+    font-size: 70px;
+  }
+}
+
+.cd-headline.clip .cd-words-wrapper {
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.cd-words-wrapper span {
+  opacity: 0;
+}
+
+.cd-words-wrapper span.is-visible {
+  font-weight: 900;
+  position: relative;
+  opacity: 1;
+}
+
