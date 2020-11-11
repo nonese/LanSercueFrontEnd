@@ -27,7 +27,6 @@ function check(element){
         }
    });
 };
-
 function BarrettMu(m)
 {
 	this.modulus = biCopy(m);

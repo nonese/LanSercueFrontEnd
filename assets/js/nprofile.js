@@ -1,4 +1,3 @@
-
 $("#input-id").fileinput(
     {
         language: 'zh',

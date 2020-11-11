@@ -84,65 +84,144 @@
             </div>
             </nav>
             <div class="container-fluid">
-                <h3 class="text-dark mb-4">用户列表</h3>
+                <h3 class="text-dark mb-4">用户列表</h3><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#myModal">添加用户</button>
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg" style="height:1000px;">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    &times;
+                                </button>
+                                <h4 class="modal-title" id="myModalLabel">
+                                    
+                                </h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-row">
+                                            <div class="col">
+                                                <div class="col">
+                                                    <div class="card shadow">
+                                                        <div class="card-header py-3">
+                                                            <p class="text-primary m-0 font-weight-bold">添加用户</p>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <form>
+                                                                <div class="form-group"><label for="address"><strong>用户名</strong><br></label><input class="form-control" type="text" placeholder="用户名"" id="username"></div>
+                                                                <div class="form-group"><label for="address"><strong>密码</strong><br></label><input class="form-control" type="text" placeholder="密码" id="password"></div>
+                                                                <div class="form-row">
+                                                                    <div class="col">
+                                                                        <div class="form-group"><label for="city"><strong>角色类型</strong></label><input class="form-control" type="text" placeholder="admin、op、nm中选填" id="role"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="button" onclick="adduser(this)">添加</button></div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group"></div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                </button>
+                            </div>
+                        </div><!-- /.modal-content -->
+                    </div><!-- /.modal -->
+                </div>
+                
                 <div class="card shadow">
                     <div class="card-header py-3">
-                        <p class="text-primary m-0 font-weight-bold">管理列表<button class="btn btn-primary" type="button">添加用户</button></p>
+                        <p class="text-primary m-0 font-weight-bold">管理员列表
+                        </p>
                     </div>
                     <div class="card-body">
-                        <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                        <div class="table-responsive table mt-2" id="adminTable" role="grid" aria-describedby="dataTable_info">
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
                                         <th>用户名</th>
                                         <th>权限</th>
-                                        <th>邮箱</th>
-                                        <th>创建时间</th>
                                         <th>设置</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td id="name">Admin User</td>
-                                        <td>管理员</td>
-                                        <td>admin@example.com</td>
-                                        <td>2020.9.1</td>
-                                        <td><button class="btn btn-primary" type="button">设置用户</button><button class="btn btn-primary" type="button">删除用户</button><br></td>
-                                    </tr>
-                                    <tr></tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td><strong>ID</strong></td>
                                         <td><strong>用户名</strong></td>
                                         <td><strong>权限</strong></td>
-                                        <td><strong>邮箱</strong></td>
-                                        <td><strong>创建时间</strong></td>
                                         <td><strong>设置</strong></td>
                                     </tr>
                                 </tfoot>
                             </table>
                         </div>
-                        <div class="row">
-                            <div class="col-md-6 align-self-center">
-                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27（分页晚些时候做）</p>
-                            </div>
-                            <div class="col-md-6">
-                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                    <ul class="pagination">
-                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                    </div>
+                </div>
+
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">运维列表
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table mt-2" id="opTable" role="grid" aria-describedby="dataTable_info">
+                            <table class="table my-0" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>用户名</th>
+                                        <th>权限</th>
+                                        <th>设置</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td><strong>用户名</strong></td>
+                                        <td><strong>权限</strong></td>
+                                        <td><strong>设置</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
                         </div>
                     </div>
                 </div>
+
+                <div class="card shadow">
+                    <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">普通用户列表
+                        </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive table mt-2" id="nmTable" role="grid" aria-describedby="dataTable_info">
+                            <table class="table my-0" id="dataTable">
+                                <thead>
+                                    <tr>
+                                        <th>用户名</th>
+                                        <th>权限</th>
+                                        <th>设置</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td><strong>用户名</strong></td>
+                                        <td><strong>权限</strong></td>
+                                        <td><strong>设置</strong></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
         <footer class="bg-white sticky-footer">
@@ -158,6 +237,9 @@
     <script src="assets/js/Animated-Type-Heading-II.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/rsa.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/ctable.js"></script>
 </body>
 
 </html>
