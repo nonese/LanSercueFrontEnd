@@ -49,7 +49,7 @@ function innermsgHTMl(data) {
     $('#neirong').empty();
     var json=eval(data);
     console.log(json)
-    var y=0; 
+    let y=0; 
     for(var i=0; i<json.length; i++){
         if(json[i].readed == "unread"){y=y+1;console.log("y计数："+y)}
     }
@@ -57,7 +57,6 @@ function innermsgHTMl(data) {
         $("#countmsg").text("3+")
     }
     else if(y=0){ $("#countmsg").text("0")
-
     var str=`
     <a class="d-flex align-items-center dropdown-item" href="tips.html">
     <div class="mr-3">
