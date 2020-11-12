@@ -19,7 +19,7 @@ function check(element){
         if (datas.loginstatus == "true"){ 
 			localStorage.setItem("session",datas.session);
 			localStorage.setItem("role",datas.role);
-			localStorage.setItem("uuid",datas.session);
+			localStorage.setItem("uuid",datas.uuid);
             alert("登陆成功，点击确定后跳转")
             window.location.href=datas.url;
         }
