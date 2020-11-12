@@ -1,6 +1,6 @@
 var uuid =localStorage.getItem("uuid"||'[]');
 console.log(uuid)
-function addevent(this){
+function addevent(element){
 $.post("http://192.168.2.220:8080/emergency/add",
 {
     uuid:uuid,
