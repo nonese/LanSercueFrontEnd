@@ -1,6 +1,8 @@
 var session =localStorage.getItem("session"||'[]');
 var uuid =localStorage.getItem("uuid"||'[]');
 var name='';
+console.log(session)
+console.log(uuid)
 $.post("http://192.168.2.220:8080/user-info/get",
 {
     uuid:uuid,
