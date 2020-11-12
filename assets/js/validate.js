@@ -49,16 +49,16 @@ function innermsgHTMl(data) {
     $('#neirong').empty();
     var json=eval(data);
     console.log(json)
-    let y=0; 
+    var y=0; 
     for(var i=0; i<json.length; i++){
         if(json[i].readed == "unread"){y=y+1;console.log("y计数："+y)}
     }
-    if(y>=3){
+    if(y>='3'){
         console.log("大于3!");
         console.log(y)
         $("#countmsg").text("3+")
     }
-    else if(y=0){ 
+    else if(y='0'){ 
         console.log(y)
         console.log("=0")
         $("#countmsg").text("0")
@@ -74,6 +74,7 @@ function innermsgHTMl(data) {
 }
     else{
         console.log("进入三不是")
+        console.log(y)
         $("#countmsg").text(y)
     }
     for(var i=0; i<json.length; i++) 
