@@ -49,9 +49,9 @@ function innerHTMl(data) {
     $('#downmenu').empty();
     var json=eval(data);
     console.log(json)
-    var y=0;
+    var y=0; 
     for(var i=0; i<json.length; i++){
-        if(json[i].readed == "unread"){y=y+1}
+        if(json[i].readed == "unread"){y=y+1;console.log("y计数："+y)}
     }
     if(y>=3){
         $("#countmsg").text("3+")
@@ -66,7 +66,7 @@ function innerHTMl(data) {
     <div><span class="small text-gray-500">你暂时无未读消息</span>
     </div>
     </a>`
-    $("#downmenu").append(str);
+    $("#neirong").append(str);
 }
     else{
         $("#countmsg").text(y)
@@ -83,7 +83,7 @@ function innerHTMl(data) {
                 <p>${json[i].content}</p>
             </div>
             </a>`
-            $("#downmenu").append(str);
+            $("#neirong").append(str);
         }
     }
 };
