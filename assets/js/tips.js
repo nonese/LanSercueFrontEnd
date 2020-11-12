@@ -35,7 +35,7 @@ function addtip(element){
     });
 }
 function settip(element){
-    $.post("http://192.168.2.220:8080/tip/add",
+    $.post("http://192.168.2.220:8080/tip/set",
     {
         uuid:uuid,
         readed:$(element).attr("role"),
