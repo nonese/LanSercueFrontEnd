@@ -73,6 +73,7 @@ function innermsgHTMl(data) {
     $("#neirong").append(str);
 }
     else{
+        console.log("进入三不是")
         $("#countmsg").text(y)
     }
     for(var i=0; i<json.length; i++) 
