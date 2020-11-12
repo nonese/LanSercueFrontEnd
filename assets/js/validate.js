@@ -52,7 +52,21 @@ function innerHTMl(data) {
     for(var i=0; i<json.length; i++){
         if(json[i].readed == "unread"){y=y+1}
     }
-    if(y>=3){$("#countmsg").text("3+")}
+    if(y>=3){
+        $("#countmsg").text("3+")
+    }
+    else if(y=0){ $("#countmsg").text("0")
+
+    var str=`
+    <a class="d-flex align-items-center dropdown-item" href="tips.html">
+    <div class="mr-3">
+        <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+    </div>
+    <div><span class="small text-gray-500">你暂时无未读消息</span>
+    </div>
+    </a>`
+    $("#downmenu").append(str);
+}
     else{
         $("#countmsg").text(y)
     }
