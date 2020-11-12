@@ -39,6 +39,7 @@ function(data,status){
     var datas=JSON.parse(data);
     if(datas.status == "success"){
         console.log(data);
+        innerHTMl(datas.data)
     }
     else{
         console.log(data);
