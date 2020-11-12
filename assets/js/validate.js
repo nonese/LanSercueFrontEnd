@@ -50,12 +50,16 @@ function innermsgHTMl(data) {
     var json=eval(data);
     console.log(json)
     var y=0; 
-    /*if(y>='3'){
+    for(var i=0; i<json.length; i++) 
+    {
+        if(json[i].readed == "unread"){y++}
+    }
+    if(y>=3){
         console.log("大于3!");
         console.log(y)
         $("#countmsg").text("3+")
     }
-    else if(y='0'){ 
+    else if(y==0){ 
         console.log(y)
         console.log("=0")
         $("#countmsg").text("0")
@@ -69,12 +73,11 @@ function innermsgHTMl(data) {
     </a>`
     $("#neirong").append(str);}
     else {
-        console.log("进入三不是")
+        console.log("进入2不是")
         console.log(y)
         $("#countmsg").text(y)
-    }*/
-    var y=0;
-    for(var i=0; i<json.length; i++) 
+    }
+    for(var i=0; i<=3; i++) 
     {
         if(json[i].readed == "unread"){
             var str=`
@@ -87,12 +90,6 @@ function innermsgHTMl(data) {
             </div>
             </a>`
             $("#neirong").append(str);
-            y=y+1;
         }
-        console.log(y)
     }
-    console.log(y)
-    if(y==1){alert("1")}
-    if(y==2){alert("2")}
-    if(y==3){alert("3")}
 };
