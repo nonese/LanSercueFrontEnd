@@ -18,12 +18,12 @@ function innerHTMl(data) {
     for(var i=0; i<json.length; i++) 
     {
         var str=`<tr>
-        <td>${json.pid}</td>
-        <td>${json.name}</td>
-        <td>${json.ip}</td>
-        <td>${json.type}</td>
-        <td>${json.status}</td>
-        <td>${json.date}<br></td>
+        <td>${json[i].pid}</td>
+        <td>${json[i].name}</td>
+        <td>${json[i].ip}</td>
+        <td>${json[i].type}</td>
+        <td>${json[i].status}</td>
+        <td>${json[i].date}<br></td>
         </tr>`
         $("#dataTable tbody").append(str);
     }
