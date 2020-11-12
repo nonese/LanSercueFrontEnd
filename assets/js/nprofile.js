@@ -25,7 +25,7 @@ $("#input-id").fileinput(
     {
         language: 'zh',
         uploadUrl: 'http://192.168.2.184:8080/file/jpg',
-        allowedFileExtensions : ['jpg','png'],
+        allowedFileExtensions : ['jpg'],
         uploadExtraData : function() {  //传递参数
             var data={
                 uuid:uuid,
