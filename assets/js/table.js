@@ -5,7 +5,7 @@ function(data,status){
     var datas=JSON.parse(data);
     if(datas.status == "success"){
         console.log(data);
-        innerHTMl(data);
+        innerHTMl(datas.devicelist);
     }
     else{
         console.log(data);
@@ -14,6 +14,8 @@ function(data,status){
 function innerHTMl(data) {
     $('#dataTable tbody').empty();
     var json=eval(data);
+    for(var i=0; i<json.length; i++) 
+    {
         var str=`<tr>
         <td>${json.pid}</td>
         <td>${json.name}</td>
@@ -23,4 +25,5 @@ function innerHTMl(data) {
         <td>${json.date}<br></td>
         </tr>`
         $("#adminTable tbody").append(str);
+    }
 };
