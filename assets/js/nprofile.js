@@ -1,3 +1,20 @@
+var uuid =getQueryVariable("uuid");
+console.log(uuid);
+$.post("http://127.0.0.1:8080/user-info/get",
+    {
+        uuid:uuid,
+    },
+    function(data,status){
+        var datas=JSON.parse(data);
+        if(datas.status == "success"){
+            console.log(data);
+            /*innerHTMl(datas);*/
+        }
+        else{
+            console.log(data);
+            alert("查无此人");
+        }
+    });
 $("#input-id").fileinput(
     {
         language: 'zh',
@@ -22,3 +39,13 @@ $("#input-id").fileinput(
             alert("状态:"+data.response.status)
         }
 });
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+};
