@@ -8,7 +8,11 @@ $.post("http://127.0.0.1:8080/user-info/get",
         var datas=JSON.parse(data);
         if(datas.status == "success"){
             console.log(data);
-            /*innerHTMl(datas);*/
+            $("#name").text(data.name);
+            $("#email").text(data.email);
+            $("#qq").text(data.qq);
+            $("#wechat").text(data.wechat);
+            $("#myavatar").attr("src","assets/img/avatars/"+data.uuid+".jpg")
         }
         else{
             console.log(data);
