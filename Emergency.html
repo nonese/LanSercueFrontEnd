@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Blank Page - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/Animated-Type-Heading-II.css">
     <link rel="stylesheet" href="assets/css/Community-ChatComments.css">
@@ -23,7 +22,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>控制面板</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="nprofile.html"><i class="fas fa-user"></i><span>个人信息管理</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" id="nprofile" href="nprofile.html"><i class="fas fa-user"></i><span>个人信息管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>任务管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="ctable.html"><i class="far fa-user-circle"></i><span>用户管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="device.html"><i class="fas fa-user-circle"></i><span>设备审批</span></a></li>
@@ -72,7 +71,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow" role="presentation">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Admin User</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar5.jpeg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small" id="usersname">Admin User</span><img class="border rounded-circle img-profile" id="smallavatar" src="assets/img/avatars/avatar5.jpeg"></a>
                                     <div
                                         class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                         <a
@@ -91,7 +90,8 @@
                                 <h3>应急事件发布区</h3>
                             </div>
                             <div class="card-body">
-                                <ul class="list-group">
+                                <ul class="list-group" id="contenthere">
+
                                     <li class="list-group-item" style="margin-bottom:6px;">
                                         <div class="media">
                                             <div></div>
@@ -102,7 +102,7 @@
                                                         <div class="row">
                                                             <div class="col-md-12">
                                                                 <p><a href="#">Sara Doe:</a> This guy has been going 100+ MPH on side streets. <br>
-<small class="text-muted">August 6, 2016 @ 10:35am </small></p>
+                                                                    <small class="text-muted">August 6, 2016 @ 10:35am </small></p>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -110,42 +110,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li class="list-group-item" style="margin-bottom:6px;">
-                                        <div class="media">
-                                            <div></div>
-                                            <div class="media-body">
-                                                <div class="media" style="overflow:visible;">
-                                                    <div><img class="mr-3" style="width: 25px; height:25px;" src="user-phoo4.jpg"></div>
-                                                    <div class="media-body" style="overflow:visible;">
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <p><a href="#">Brennan Prill:</a> This guy has been going 100+ MPH on side streets. <br>
-<small class="text-muted">August 6, 2016 @ 10:35am </small></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="list-group-item" style="margin-bottom:6px;">
-                                        <div class="media">
-                                            <div></div>
-                                            <div class="media-body">
-                                                <div class="media" style="overflow:visible;">
-                                                    <div><img class="mr-3" style="width: 25px; height:25px;" src="user-phoo4.jpg"></div>
-                                                    <div class="media-body" style="overflow:visible;">
-                                                        <div class="row">
-                                                            <div class="col-md-12">
-                                                                <p><a href="#">Brennan Prill:</a> This guy has been going 100+ MPH on side streets. <br>
-<small class="text-muted">August 6, 2016 @ 10:35am </small></p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+
                                 </ul>
                             </div>
                         </div>
@@ -166,6 +131,8 @@
     <script src="assets/js/Animated-Type-Heading-II.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/em.js"></script>
 </body>
 
 </html>
