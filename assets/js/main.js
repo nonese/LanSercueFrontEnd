@@ -28,6 +28,7 @@ function(data,status){
     if(datas.status == "success"){
         console.log(data);
         $("#smallavatar").attr("src","assets/img/avatars/"+uuid+".jpg");
+        $("#nprofile").attr("href","nprofile.html?uuid="+datas.uuid);
     }
     else{
         console.log(data);
