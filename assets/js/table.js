@@ -14,6 +14,7 @@ function(data,status){
 function innerHTMl(data) {
     $('#dataTable tbody').empty();
     var json=eval(data);
+    console.log(json)
     for(var i=0; i<json.length; i++) 
     {
         var str=`<tr>
@@ -24,6 +25,6 @@ function innerHTMl(data) {
         <td>${json.status}</td>
         <td>${json.date}<br></td>
         </tr>`
-        $("#adminTable tbody").append(str);
+        $("#dataTable tbody").append(str);
     }
 };
