@@ -9,11 +9,12 @@ $.post("http://127.0.0.1:8080/user-info/get",
         if(datas.status == "success"){
             console.log(data);
             var datas = JSON.parse(data);
-            $("#name").text(datas.name);
-            $("#email").text(datas.email);
-            $("#qq").text(datas.qq);
-            $("#wechat").text(datas.wechat);
+            $("#name").val(datas.name);
+            $("#email").val(datas.email);
+            $("#qq").val(datas.qq);
+            $("#wechat").val(datas.wechat);
             $("#myavatar").attr("src","assets/img/avatars/"+datas.uuid+".jpg")
+            $("#change").attr("uuid",datas.uuid)
         }
         else{
             console.log(data);
@@ -27,7 +28,7 @@ $("#input-id").fileinput(
         allowedFileExtensions : ['jpg','png'],
         uploadExtraData : function() {  //传递参数
             var data={
-                uuid:"83992asd",
+                uuid:uuid,
                 };
                 return data; 
      },
@@ -44,6 +45,28 @@ $("#input-id").fileinput(
             alert("状态:"+data.response.status)
         }
 });
+function changesetting(element){
+    var userid=$(element).attr("uuid");
+    $.post("http://127.0.0.1:8080/user-info/update",
+    {
+        uuid:userid,
+        email:$("#email").val(),
+        name:$("#name").val(),
+        qq:$("#qq").val(),
+        wechat:$("#wechat").val()
+    },
+    function(data,status){
+        var datas=JSON.parse(data);
+        if(datas.status == "success"){
+            console.log(data);
+            alert("修改成功！");
+        }
+        else{
+            console.log(data);
+            alert("修改失败！");
+        }
+    });
+}
 function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
