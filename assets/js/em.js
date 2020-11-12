@@ -23,7 +23,7 @@ function innerHTMl(data) {
                 <div></div>
                 <div class="media-body">
                     <div class="media" style="overflow:visible;">
-                        <div><img class="mr-3" style="width: 25px; height:25px;" src="assets/img/avatars/${json[i].uuid}.jpg"></div>
+                        <div><img class="mr-3" style="width: 50px; height:50px;" src="assets/img/avatars/${json[i].uuid}.jpg"></div>
                         <div class="media-body" style="overflow:visible;">
                             <div class="row">
                                 <div class="col-md-12">
