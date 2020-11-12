@@ -54,9 +54,14 @@ function innermsgHTMl(data) {
         if(json[i].readed == "unread"){y=y+1;console.log("y计数："+y)}
     }
     if(y>=3){
+        console.log("大于3!");
+        console.log(y)
         $("#countmsg").text("3+")
     }
-    else if(y=0){ $("#countmsg").text("0")
+    else if(y=0){ 
+        console.log(y)
+        console.log("=0")
+        $("#countmsg").text("0")
     var str=`
     <a class="d-flex align-items-center dropdown-item" href="tips.html">
     <div class="mr-3">
