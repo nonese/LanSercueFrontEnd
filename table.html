@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Table - Brand</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/css/Animated-Type-Heading-II.css">
     <link rel="stylesheet" href="assets/css/Community-ChatComments.css">
@@ -23,7 +22,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>控制面板</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="nprofile.html"><i class="fas fa-user"></i><span>个人信息管理</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" id="nprofile" href="nprofile.html"><i class="fas fa-user"></i><span>个人信息</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="table.html"><i class="fas fa-table"></i><span>任务管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="ctable.html"><i class="far fa-user-circle"></i><span>用户管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="device.html"><i class="fas fa-user-circle"></i><span>设备审批</span></a></li>
@@ -94,52 +93,27 @@
                             <table class="table my-0" id="dataTable">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>用户名</th>
-                                        <th>权限</th>
-                                        <th>任务名</th>
-                                        <th>完成情况</th>
+                                        <th>扫描id</th>
+                                        <th>扫描任务名称</th>
+                                        <th>扫描IP</th>
+                                        <th>扫描类型</th>
+                                        <th>扫描完成情况</th>
                                         <th>开始时间</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Admin User</td>
-                                        <td>管理员</td>
-                                        <td>扫描192.168.1.1</td>
-                                        <td>已完成</td>
-                                        <td>2020.9.1<br></td>
-                                    </tr>
-                                    <tr></tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
-                                        <td><strong>ID</strong></td>
-                                        <td><strong>用户名</strong></td>
-                                        <td><strong>权限</strong></td>
-                                        <td><strong>任务名</strong></td>
-                                        <td><strong>完成情况</strong></td>
+                                        <td><strong>扫描id</strong></td>
+                                        <td><strong>扫描任务名称</strong></td>
+                                        <td><strong>扫描IP</strong></td>
+                                        <td><strong>扫描类型</strong></td>
+                                        <td><strong>扫描完成情况</strong></td>
                                         <td><strong>开始时间</strong></td>
                                     </tr>
                                 </tfoot>
                             </table>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 align-self-center">
-                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27（分页晚些时候做）</p>
-                            </div>
-                            <div class="col-md-6">
-                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                    <ul class="pagination">
-                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,6 +132,9 @@
     <script src="assets/js/Animated-Type-Heading-II.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/table.js"></script>
+
 </body>
 
 </html>
