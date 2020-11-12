@@ -46,8 +46,7 @@ function settip(element){
         if(datas.status == "success"){
             console.log(data);
             alert("设置成功");
-            if ($(element).attr("role")=="readed"){$(element).prev().prev().prev().prev().text("已读")}
-            else{$(element).prev().prev().prev().prev().text("未读")}
+            location.reload();
         }
         else{
             console.log(data);
