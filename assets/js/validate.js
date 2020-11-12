@@ -12,6 +12,7 @@ function(data,status){
         console.log(data);
         $("#smallavatar").attr("src","assets/img/avatars/"+datas.uuid+".jpg");
         $("#usersname").text(name);
+        $("#nprofile").attr("href","nprofile.html?uuid="+datas.uuid);
     }
     else{
         console.log(data);
