@@ -14,13 +14,14 @@ function check(element){
         password:result
     },
     function(data,status){
-        /*alert("数据: \n" + data + "\n状态: " + status+"\n");*/
         var datas = JSON.parse(data);
-        //console.log(datas.loginstatus)
-        if (datas.loginstatus == true){ 
+        console.log(data)
+        if (datas.loginstatus == "true"){ 
+			localStorage.setItem("session",datas.session);
+			localStorage.setItem("role",datas.role);
+			localStorage.setItem("uuid",datas.session);
             alert("登陆成功，点击确定后跳转")
             window.location.href=datas.url;
-            /*localStorage.name =$("#username").val();*/
         }
         else{
             alert("登陆失败，请检查用户名和密码！")
