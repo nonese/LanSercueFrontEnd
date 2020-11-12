@@ -17,14 +17,29 @@ function innerHTMl(data) {
     console.log(json)
     for(var i=0; i<json.length; i++) 
     {
-        var str=`<tr>
-        <td>${json[i].pid}</td>
-        <td>${json[i].name}</td>
-        <td>${json[i].ip}</td>
-        <td>${json[i].type}</td>
-        <td>${json[i].status}</td>
-        <td>${json[i].date}<br></td>
-        </tr>`
-        $("#dataTable tbody").append(str);
+        if(json[i].type == "basic"){
+            var str=`<tr>
+            <td>${json[i].pid}</td>
+            <td>${json[i].name}</td>
+            <td>${json[i].ip}</td>
+            <td>${json[i].type}</td>
+            <td>${json[i].status}</td>
+            <td>${json[i].date}</td>
+            <td><a href="assets/file/${json[i].pid}.html"><button class="btn btn-primary" type="button">下载报告</button></a><br></td>
+            </tr>`
+            $("#dataTable tbody").append(str);
+        }
+        else{
+            var str=`<tr>
+            <td>${json[i].pid}</td>
+            <td>${json[i].name}</td>
+            <td>${json[i].ip}</td>
+            <td>${json[i].type}</td>
+            <td>${json[i].status}</td>
+            <td>${json[i].date}</td>
+            <td><a href="assets/file/${json[i].pid}.txt"><button class="btn btn-primary" type="button" pid="${json[i].pid}">下载报告</button></a><br></td>
+            </tr>`
+            $("#dataTable tbody").append(str);
+        }
     }
 };
