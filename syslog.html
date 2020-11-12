@@ -23,7 +23,7 @@
                 <hr class="sidebar-divider my-0">
                 <ul class="nav navbar-nav text-light" id="accordionSidebar">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.html"><i class="fas fa-tachometer-alt"></i><span>控制面板</span></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="nprofile.html"><i class="fas fa-user"></i><span>个人信息管理</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" id="nprofile" href="nprofile.html"><i class="fas fa-user"></i><span>个人信息</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="table.html"><i class="fas fa-table"></i><span>任务管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="ctable.html"><i class="far fa-user-circle"></i><span>用户管理</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="device.html"><i class="fas fa-user-circle"></i><span>设备审批</span></a></li>
@@ -72,7 +72,7 @@
                             </li>
                             <div class="d-none d-sm-block topbar-divider"></div>
                             <li class="nav-item dropdown no-arrow" role="presentation">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small">Admin User</span><img class="border rounded-circle img-profile" src="assets/img/avatars/avatar5.jpeg"></a>
+                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#"><span class="d-none d-lg-inline mr-2 text-gray-600 small" id="usersname">Admin User</span><img class="border rounded-circle img-profile" id="smallavatar" src="assets/img/avatars/avatar5.jpeg"></a>
                                     <div
                                         class="dropdown-menu shadow dropdown-menu-right animated--grow-in" role="menu"><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a class="dropdown-item" role="presentation" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a>
                                         <a
@@ -87,7 +87,7 @@
                 <h3 class="text-dark mb-4">系统日志</h3>
                 <div class="card shadow">
                     <div class="card-header py-3">
-                        <p class="text-primary m-0 font-weight-bold">全部日志显示</p>
+                        <p class="text-primary m-0 font-weight-bold">全部日志显示 <button class="btn btn-primary" type="button" onclick="searchimportant(this)">查询重要级别的事件</button><button class="btn btn-primary" type="button" onclick="searchem(this)">查询严重级别的事件</button></p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
@@ -96,50 +96,21 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>程度</th>
-                                        <th>相关</th>
-                                        <th>用户</th>
                                         <th>日期</th>
                                         <th>事件内容</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>INFO</td>
-                                        <td>登录</td>
-                                        <td>Admin User</td>
-                                        <td>2008/11/28</td>
-                                        <td>登陆成功</td>
-                                    </tr>
-                                    <tr></tr>
                                 </tbody>
                                 <tfoot>
                                     <tr>
                                         <td><strong>ID</strong></td>
                                         <td><strong>程度</strong></td>
-                                        <td><strong>相关</strong></td>
-                                        <td><strong>用户</strong></td>
                                         <td><strong>日期</strong></td>
                                         <td><strong>事件内容</strong></td>
                                     </tr>
                                 </tfoot>
                             </table>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 align-self-center">
-                                <p id="dataTable_info" class="dataTables_info" role="status" aria-live="polite">Showing 1 to 10 of 27</p>
-                            </div>
-                            <div class="col-md-6">
-                                <nav class="d-lg-flex justify-content-lg-end dataTables_paginate paging_simple_numbers">
-                                    <ul class="pagination">
-                                        <li class="page-item disabled"><a class="page-link" href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                        <li class="page-item"><a class="page-link" href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-                                    </ul>
-                                </nav>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -158,6 +129,8 @@
     <script src="assets/js/Animated-Type-Heading-II.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/syslog.js"></script>
 </body>
 
 </html>
