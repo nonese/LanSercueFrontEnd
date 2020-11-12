@@ -10,6 +10,7 @@ function(data,status){
         $("#onlinedevice").text(datas.nowdevice);
         $("#totaldevice").text(datas.totaldevice);
         var baifenbi=datas.nowtasks/16*100;
+        console.log(baifenbi);
         $("#baifenbi").attr("style","width: "+baifenbi+"%;");
     }
     else{
