@@ -13,6 +13,7 @@ function(data,status){
         $("#smallavatar").attr("src","assets/img/avatars/"+datas.uuid+".jpg");
         $("#usersname").text(name);
         $("#nprofile").attr("href","nprofile.html?uuid="+datas.uuid);
+        $("#new2profile").attr("href","nprofile.html?uuid="+datas.uuid);
     }
     else{
         console.log(data);
@@ -20,3 +21,54 @@ function(data,status){
         window.location.href='login.html';
     }
 });
+/**
+ *                                         <a class="d-flex align-items-center dropdown-item" href="#">
+                                            <div class="mr-3">
+                                                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+                                            </div>
+                                            <div><span class="small text-gray-500">September 12, 2020</span>
+                                                <p>恭喜你成功创建了账户，这是你的第一条提示!</p>
+                                            </div>
+                                        </a>
+ */
+$.post("http://192.168.2.220:8080/tip/get",
+{
+    uuid:uuid,
+},
+function(data,status){
+    var datas=JSON.parse(data);
+    if(datas.status == "success"){
+        console.log(data);
+    }
+    else{
+        console.log(data);
+    }
+});
+function innerHTMl(data) {
+    $('#downmenu').empty();
+    var json=eval(data);
+    console.log(json)
+    var y=0;
+    for(var i=0; i<json.length; i++){
+        if(json[i].readed == "unread"){y=y+1}
+    }
+    if(y>=3){$("#countmsg").text("3+")}
+    else{
+        $("#countmsg").text(y)
+    }
+    for(var i=0; i<json.length; i++) 
+    {
+        if(json[i].readed == "unread"){
+            var str=`
+            <a class="d-flex align-items-center dropdown-item" href="tips.html">
+            <div class="mr-3">
+                <div class="bg-primary icon-circle"><i class="fas fa-file-alt text-white"></i></div>
+            </div>
+            <div><span class="small text-gray-500">${json[i].date}</span>
+                <p>${json[i].content}</p>
+            </div>
+            </a>`
+            $("#downmenu").append(str);
+        }
+    }
+};
