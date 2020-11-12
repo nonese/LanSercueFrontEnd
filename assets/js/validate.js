@@ -92,7 +92,7 @@ function innermsgHTMl(data) {
         console.log(y)
     }
     console.log(y)
-    if(y=1){alert("1")}
-    if(y=2){alert("2")}
-    if(y=3){alert("3")}
+    if(y==1){alert("1")}
+    if(y==2){alert("2")}
+    if(y==3){alert("3")}
 };
