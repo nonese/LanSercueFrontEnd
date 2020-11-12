@@ -39,14 +39,14 @@ function(data,status){
     var datas=JSON.parse(data);
     if(datas.status == "success"){
         console.log(data);
-        innerHTMl(datas.data)
+        innermsgHTMl(datas.data)
     }
     else{
         console.log(data);
     }
 });
-function innerHTMl(data) {
-    $('#downmenu').empty();
+function innermsgHTMl(data) {
+    $('#neirong').empty();
     var json=eval(data);
     console.log(json)
     var y=0; 
