@@ -1,5 +1,6 @@
 var session =localStorage.getItem("session"||'[]');
 var uuid =localStorage.getItem("uuid"||'[]');
+console.log(uuid)
 var name =localStorage.getItem("name"||'[]');
 $.post("http://192.168.2.220:8080/api/user/validate",
 {
@@ -9,7 +10,7 @@ function(data,status){
     var datas=JSON.parse(data);
     if(datas.status == "success"){
         console.log(data);
-        $("#smallavatar").attr("src","assets/img/avatars/"+uuid+".jpg");
+        $("#smallavatar").attr("src","assets/img/avatars/"+datas.uuid+".jpg");
         $("#usersname").text(name);
     }
     else{
