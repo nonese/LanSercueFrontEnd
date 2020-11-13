@@ -1,6 +1,6 @@
 var uuid =getQueryVariable("uuid");
 console.log(uuid);
-$.post("http://127.0.0.1:8080/user-info/get",
+$.post("http://192.168.2.184:82/user-info/get",
     {
         uuid:uuid,
     },
@@ -49,7 +49,7 @@ $("#input-id").fileinput(
 });
 function changesetting(element){
     var userid=$(element).attr("uuid");
-    $.post("http://127.0.0.1:8080/user-info/update",
+    $.post("http://192.168.2.184:82/user-info/update",
     {
         uuid:userid,
         email:$("#email").val(),
@@ -71,7 +71,7 @@ function changesetting(element){
 }
 function addsetting(element){
     var userid=$(element).attr("uuid");
-    $.post("http://127.0.0.1:8080/user-info/add",
+    $.post("http://192.168.2.184:82/user-info/add",
     {
         uuid:uuid,
         email:$("#email").val(),
