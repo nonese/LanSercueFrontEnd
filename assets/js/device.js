@@ -3,7 +3,7 @@ console.log(role)
 var uuid =localStorage.getItem("uuid"||'[]');
 if(role == 'admin'){
     console.log("admin")
-    $.post("http://192.168.2.220:8080/device/list2",
+$.post("http://192.168.2.220:8080/device/list2",
 {
     status:"wait",
 },
@@ -32,6 +32,7 @@ function(data,status){
         alert("获取所有设备失败");
     }
 });
+};
 if(role =='op'){
     console.log("进入op")
     $.post("http://192.168.2.220:8080/device/listall",
@@ -48,7 +49,7 @@ function(data,status){
         alert("获取所有设备失败");
     }
 });
-}
+};
 if(role =='nm'){
     console.log("nm")
     $.post("http://192.168.2.220:8080/device/list",
@@ -66,7 +67,6 @@ function(data,status){
         alert("获取所有设备失败");
     }
 });
-}
 };
 function innerHTMl(data) {
     $('#daidataTable tbody').empty();
