@@ -21,6 +21,7 @@ if(role == 'nm'){
     $("#Emergencys").remove();
     $("#tabless").remove();
     $("#seachdaishenpi").remove();
+    $("#serverinput").remove();
 }
 $.post("http://192.168.2.220:8080/api/user/validate",
 {
