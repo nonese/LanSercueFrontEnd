@@ -19,6 +19,7 @@ $.post("http://127.0.0.1:8080/user-info/get",
         else{
             console.log(data);
             console("无该用户信息");
+            alert("请进行第一次用户信息设置")
             $("#change").attr("onclick","addsetting(this)")
         }
     });
