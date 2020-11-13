@@ -2,6 +2,7 @@ var role =localStorage.getItem("role"||'[]');
 console.log(role)
 var uuid =localStorage.getItem("uuid"||'[]');
 if(role == 'admin'){
+    console.log("admin")
     $.post("http://192.168.2.220:8080/device/list2",
 {
     status:"wait",
@@ -32,6 +33,7 @@ function(data,status){
     }
 });
 if(role =='op'){
+    console.log("进入op")
     $.post("http://192.168.2.220:8080/device/listall",
 {
 },
@@ -48,6 +50,7 @@ function(data,status){
 });
 }
 if(role =='nm'){
+    console.log("nm")
     $.post("http://192.168.2.220:8080/device/list",
 {
     uuid:uuid,
