@@ -98,3 +98,10 @@ function innermsgHTMl(data) {
         }
     }
 };
+function logout(element){
+    localStorage.setItem("session","");
+    localStorage.setItem("uuid","");
+    localStorage.setItem("role","");
+    localStorage.setItem("name","");
+    window.location.href='login.html'
+}
