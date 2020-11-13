@@ -1,4 +1,7 @@
-$.post("http://192.168.2.220:8080/device/list2",
+var role =localStorage.getItem("role"||'[]');
+var uuid =localStorage.getItem("uuid"||'[]');
+if(role == 'admin'){
+    $.post("http://192.168.2.220:8080/device/list2",
 {
     status:"wait",
 },
@@ -27,6 +30,40 @@ function(data,status){
         alert("获取所有设备失败");
     }
 });
+if(role =='op'){
+    $.post("http://192.168.2.220:8080/device/listall",
+{
+},
+function(data,status){
+    var datas=JSON.parse(data);
+    if(datas.status == "success"){
+        console.log(data);
+        innerHTMl2(datas.devicelist);
+    }
+    else{
+        console.log(data);
+        alert("获取所有设备失败");
+    }
+});
+}
+if(role =='nm'){
+    $.post("http://192.168.2.220:8080/device/list",
+{
+    uuid:uuid,
+},
+function(data,status){
+    var datas=JSON.parse(data);
+    if(datas.status == "success"){
+        console.log(data);
+        innerHTMl2(datas.devicelist);
+    }
+    else{
+        console.log(data);
+        alert("获取所有设备失败");
+    }
+});
+}
+};
 function innerHTMl(data) {
     $('#daidataTable tbody').empty();
     var json=eval(data);

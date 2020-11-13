@@ -9,7 +9,7 @@ if(role =='op'){
     $("#syslogs").remove();
     $("#addevents").remove();
     $("#tabless").remove();
-
+    $("#seachdaishenpi").remove();
 }
 if(role == 'nm'){
     $("#logtree").remove();
@@ -20,6 +20,7 @@ if(role == 'nm'){
     $("#scantasks").remove();
     $("#Emergencys").remove();
     $("#tabless").remove();
+    $("#seachdaishenpi").remove();
 }
 $.post("http://192.168.2.220:8080/api/user/validate",
 {
