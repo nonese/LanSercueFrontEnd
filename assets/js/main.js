@@ -1,6 +1,25 @@
 var session =localStorage.getItem("session"||'[]');
 var uuid =localStorage.getItem("uuid"||'[]');
+var role =localStorage.getItem("role"||'[]');
 var name='';
+if(role =='op'){
+    $("#daishenpide").remove();
+    $("#catbles").remove();
+    $("#syslogs").remove();
+    $("#addevents").remove();
+    $("#tabless").remove();
+
+}
+if(role == 'nm'){
+    $("#logtree").remove();
+    $("#daishenpide").remove();
+    $("#catbles").remove();
+    $("#syslogs").remove();
+    $("#addevents").remove();
+    $("#scantasks").remove();
+    $("#Emergencys").remove();
+    $("#tabless").remove();
+}
 console.log(session)
 console.log(uuid)
 $.post("http://192.168.2.220:8080/user-info/get",
