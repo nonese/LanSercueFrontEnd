@@ -1,4 +1,5 @@
 var role =localStorage.getItem("role"||'[]');
+console.log(role)
 var uuid =localStorage.getItem("uuid"||'[]');
 if(role == 'admin'){
     $.post("http://192.168.2.220:8080/device/list2",
