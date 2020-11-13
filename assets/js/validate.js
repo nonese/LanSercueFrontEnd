@@ -2,6 +2,25 @@ var session =localStorage.getItem("session"||'[]');
 var uuid =localStorage.getItem("uuid"||'[]');
 console.log(uuid)
 var name =localStorage.getItem("name"||'[]');
+var role =localStorage.getItem("role"||'[]');
+if(role =='op'){
+    $("#daishenpide").remove();
+    $("#catbles").remove();
+    $("#syslogs").remove();
+    $("#addevents").remove();
+    $("#tabless").remove();
+
+}
+if(role == 'nm'){
+    $("#logtree").remove();
+    $("#daishenpide").remove();
+    $("#catbles").remove();
+    $("#syslogs").remove();
+    $("#addevents").remove();
+    $("#scantasks").remove();
+    $("#Emergencys").remove();
+    $("#tabless").remove();
+}
 $.post("http://192.168.2.220:8080/api/user/validate",
 {
     sessionid:session,
