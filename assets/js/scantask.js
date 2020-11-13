@@ -1,5 +1,5 @@
 var uuid =localStorage.getItem("uuid"||'[]');
-$.post("http://192.168.2.219/scan/list",
+$.post("http://192.168.2.184:82/scan/list",
 {
     uuid:uuid,
 },
@@ -14,7 +14,7 @@ function(data,status){
     }
 });
 function addscan(element){
-    $.post("http://192.168.2.219/scan/addscan",
+    $.post("http://192.168.2.184:82/scan/addscan",
 {
     type:$("#type").val(),
     uuid:uuid,

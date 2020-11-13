@@ -3,7 +3,7 @@ console.log(role)
 var uuid =localStorage.getItem("uuid"||'[]');
 if(role == 'admin'){
     console.log("admin")
-$.post("http://192.168.2.219/device/list2",
+$.post("http://192.168.2.184:82/device/list2",
 {
     status:"wait",
 },
@@ -18,7 +18,7 @@ function(data,status){
         alert("获取待审批设备失败");
     }
 });
-$.post("http://192.168.2.219/device/listall",
+$.post("http://192.168.2.184:82/device/listall",
 {
 },
 function(data,status){
@@ -35,7 +35,7 @@ function(data,status){
 };
 if(role =='op'){
     console.log("进入op")
-    $.post("http://192.168.2.219/device/listall",
+    $.post("http://192.168.2.184:82/device/listall",
 {
 },
 function(data,status){
@@ -52,7 +52,7 @@ function(data,status){
 };
 if(role =='nm'){
     console.log("nm")
-    $.post("http://192.168.2.219/device/list",
+    $.post("http://192.168.2.184:82/device/list",
 {
     uuid:uuid,
 },
@@ -107,7 +107,7 @@ function innerHTMl2(data) {
 function allowdevice(element) {
 var uid =$(element).attr("id")
 var mac =$(element).attr("mac")
-$.post("http://192.168.2.219/device/allow",
+$.post("http://192.168.2.184:82/device/allow",
 {
     uuid:uid,
     mac:mac,

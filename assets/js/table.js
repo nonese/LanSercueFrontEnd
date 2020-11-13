@@ -1,4 +1,4 @@
-$.post("http://192.168.2.219/scan/listall",
+$.post("http://192.168.2.184:82/scan/listall",
 {
 },
 function(data,status){

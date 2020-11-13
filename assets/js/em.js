@@ -1,4 +1,4 @@
-$.post("http://192.168.2.219/emergency/get",
+$.post("http://192.168.2.184:82/emergency/get",
 {
 },
 function(data,status){

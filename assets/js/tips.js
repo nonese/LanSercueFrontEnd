@@ -1,5 +1,5 @@
 var uuid =localStorage.getItem("uuid"||'[]');
-$.post("http://192.168.2.219/tip/get",
+$.post("http://192.168.2.184:82/tip/get",
 {
     uuid:uuid,
 },
@@ -15,7 +15,7 @@ function(data,status){
 });
 function addtip(element){
     console.log($("#content").val())
-    $.post("http://192.168.2.219/tip/add",
+    $.post("http://192.168.2.184:82/tip/add",
     {
         uuid:uuid,
         username:$("#username").val(),
@@ -35,7 +35,7 @@ function addtip(element){
     });
 }
 function settip(element){
-    $.post("http://192.168.2.219/tip/set",
+    $.post("http://192.168.2.184:82/tip/set",
     {
         uuid:uuid,
         readed:$(element).attr("role"),

@@ -1,4 +1,4 @@
-$.post("http://192.168.2.219/system-log/getall",
+$.post("http://192.168.2.184:82/system-log/getall",
 {
 },
 function(data,status){
@@ -28,7 +28,7 @@ function innerHTMl(data) {
     }
 };
 function searchimportant(element) {
-    $.post("http://192.168.2.219/system-log/get",
+    $.post("http://192.168.2.184:82/system-log/get",
 {
     role:"important"
 },
@@ -45,7 +45,7 @@ function(data,status){
 });
 };
 function searchem(element) {
-    $.post("http://192.168.2.219/system-log/get",
+    $.post("http://192.168.2.184:82/system-log/get",
 {
     role:"critical"
 },
