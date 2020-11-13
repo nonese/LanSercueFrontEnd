@@ -7,7 +7,7 @@ function check(element){
     var key = new RSAKeyPair("010001", '', "00b15fdee0d7ed06c21067d59e65031becca4c3eafe52d891725c75c37dac7ca2d");
     var result = encryptedString(key, password);
     console.log(result)
-    $.post("http://192.168.2.220:8080/api/user/login",
+    $.post("http://192.168.2.219/api/user/login",
     {
         username:$("#username").val(),
         /*password:result*/

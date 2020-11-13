@@ -1,4 +1,4 @@
-$.post("http://192.168.2.220:8080/overview/get",
+$.post("http://192.168.2.219/overview/get",
 {
 },
 function(data,status){

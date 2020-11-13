@@ -23,7 +23,7 @@ if(role == 'nm'){
     $("#seachdaishenpi").remove();
     $("#serverinput").remove();
 }
-$.post("http://192.168.2.220:8080/api/user/validate",
+$.post("http://192.168.2.219/api/user/validate",
 {
     sessionid:session,
 },
@@ -52,7 +52,7 @@ function(data,status){
                                             </div>
                                         </a>
  */
-$.post("http://192.168.2.220:8080/tip/get",
+$.post("http://192.168.2.219/tip/get",
 {
     uuid:uuid,
 },

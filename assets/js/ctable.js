@@ -1,4 +1,4 @@
-$.post("http://192.168.2.220:8080/api/user/list?role=admin",
+$.post("http://192.168.2.219/api/user/list?role=admin",
 {
 },
 function(data,status){
@@ -14,7 +14,7 @@ function(data,status){
         console.log("查询管理员列表失败")
     }
 });
-$.post("http://192.168.2.220:8080/api/user/list",
+$.post("http://192.168.2.219/api/user/list",
 {
     role:"op",
 },
@@ -31,7 +31,7 @@ function(data,status){
         console.log("查询运维列表失败")
     }
 });
-$.post("http://192.168.2.220:8080/api/user/list",
+$.post("http://192.168.2.219/api/user/list",
 {
     role:"nm",
 },
@@ -56,7 +56,7 @@ function adduser(element){
     var key = new RSAKeyPair("010001", '', "00b15fdee0d7ed06c21067d59e65031becca4c3eafe52d891725c75c37dac7ca2d");
     var result = encryptedString(key, password);
     console.log(result)
-    $.post("http://192.168.2.220:8080/api/user/AddUser",
+    $.post("http://192.168.2.219/api/user/AddUser",
     {
         username:$("#username").val(),
         /*password:result*/
@@ -86,7 +86,7 @@ function adduser(element){
 function deluser(element){
     var id=$(element).attr("userid");
     console.log(id);
-    $.post("http://192.168.2.220:8080/api/user/del",
+    $.post("http://192.168.2.219/api/user/del",
     {
         username:id,
     },

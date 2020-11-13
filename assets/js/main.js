@@ -22,7 +22,7 @@ if(role == 'nm'){
 }
 console.log(session)
 console.log(uuid)
-$.post("http://192.168.2.220:8080/user-info/get",
+$.post("http://192.168.2.219/user-info/get",
 {
     uuid:uuid,
 },
@@ -38,7 +38,7 @@ function(data,status){
         console.log("获取名称失败");
     }
 });
-$.post("http://192.168.2.220:8080/api/user/validate",
+$.post("http://192.168.2.219/api/user/validate",
 {
     sessionid:session,
 },
@@ -55,7 +55,7 @@ function(data,status){
         window.location.href='login.html';
     }
 });
-$.post("http://192.168.2.220:8080/tip/get",
+$.post("http://192.168.2.219/tip/get",
 {
     uuid:uuid,
 },
