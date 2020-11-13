@@ -73,7 +73,7 @@ function addsetting(element){
     var userid=$(element).attr("uuid");
     $.post("http://127.0.0.1:8080/user-info/add",
     {
-        uuid:userid,
+        uuid:uuid,
         email:$("#email").val(),
         name:$("#name").val(),
         qq:$("#qq").val(),
