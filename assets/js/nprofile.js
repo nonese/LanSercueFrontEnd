@@ -18,7 +18,8 @@ $.post("http://127.0.0.1:8080/user-info/get",
         }
         else{
             console.log(data);
-            alert("查无此人");
+            console("无该用户信息");
+            $("#change").attr("onclick","addsetting(this)")
         }
     });
 $("#input-id").fileinput(
@@ -48,6 +49,28 @@ $("#input-id").fileinput(
 function changesetting(element){
     var userid=$(element).attr("uuid");
     $.post("http://127.0.0.1:8080/user-info/update",
+    {
+        uuid:userid,
+        email:$("#email").val(),
+        name:$("#name").val(),
+        qq:$("#qq").val(),
+        wechat:$("#wechat").val()
+    },
+    function(data,status){
+        var datas=JSON.parse(data);
+        if(datas.status == "success"){
+            console.log(data);
+            alert("修改成功！");
+        }
+        else{
+            console.log(data);
+            alert("修改失败！");
+        }
+    });
+}
+function addsetting(element){
+    var userid=$(element).attr("uuid");
+    $.post("http://127.0.0.1:8080/user-info/add",
     {
         uuid:userid,
         email:$("#email").val(),
