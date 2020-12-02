@@ -17,3 +17,31 @@ function(data,status){
         console.log("获取清点失败");
     }
 });
+$.post("http://192.168.2.184:82/safereport/get",
+{
+},
+function(data,status){
+    var datas=JSON.parse(data);
+    if(datas.status == "success"){
+        console.log(data);
+        InnerHtml(datas.data);
+    }
+    else{
+        console.log("获取清点失败");
+    }
+});
+function InnerHtml(data){
+    var json=eval(data)
+    $("#loudong").empty()
+    for(var i=0;i<json.length;i++){
+        var str=`<ul class="list-group list-group-flush">
+        <li class="list-group-item">
+            <div class="row align-items-center no-gutters">
+                <div class="col mr-2">
+                    <h6 class="mb-0"><strong>${json[i].title}</strong></h6><span class="text-xs">${json[i].content}</span></div>
+            </div>
+        </li>
+    </ul>`
+    $("#loudong").append(str)
+    }
+}
