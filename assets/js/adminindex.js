@@ -37,7 +37,7 @@ function InnerHtml(data){
         <li class="list-group-item">
             <div class="row align-items-center no-gutters">
                 <div class="col mr-2">
-                    <h6 class="mb-0"><strong>${json[i].title}</strong></h6><span class="text-xs">${json[i].content}</span></div>
+                    <h6 class="mb-0"><strong>${json[i].title}</strong></h6><span class="text-xs">${json[i].url}</span></div>
             </div>
         </li>
     </ul>`
