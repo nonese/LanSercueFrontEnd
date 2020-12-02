@@ -32,7 +32,6 @@ function(data,status){
 });
 function InnerHtml(data){
     var json=eval(data)
-    $("#loudong").empty()
     for(var i=0;i<json.length;i++){
         var str=`<ul class="list-group list-group-flush">
         <li class="list-group-item">
